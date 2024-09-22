@@ -24,16 +24,19 @@ body {
     margin-right: 20px;
 }
 
-.nav-list a {
-    text-decoration: none;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
+.nav-list a,
+.nav-list .btn {
+    background: #34495e; /* Mismo color que la barra de navegación */
+    color: white; /* Texto en blanco */
+    padding: 10px 15px; /* Espaciado */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
     transition: background 0.3s;
 }
 
-.nav-list a:hover {
-    background: rgba(255, 255, 255, 0.2);
+.nav-list a:hover,
+.nav-list .btn:hover {
+    background: rgba(255, 255, 255, 0.2); /* Efecto hover */
 }
 
 .search-tab {
@@ -131,7 +134,7 @@ body {
     .nav-list li {
         margin-bottom: 10px;
         margin-right: 0;
-    }
+    }   
 
     .search-container {
         width: 100%;
