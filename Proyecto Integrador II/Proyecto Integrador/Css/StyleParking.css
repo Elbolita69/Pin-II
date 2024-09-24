@@ -1,4 +1,4 @@
-/* Estilos generales */
+
 body {
   background: #ecf0f1;
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -6,16 +6,16 @@ body {
   margin: 0;
 }
 
-/* Estilos para el navbar */
+
 .navbar {
-  background: #5298DB; /* Color deseado: #52, 152, 219 */
+  background: #5298DB; 
   padding: 10px 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-brand,
 .navbar .nav-link {
-  color: white; /* Texto en blanco */
+  color: white; 
 }
 
 .nav-list {
@@ -33,17 +33,17 @@ body {
 
 .nav-list a,
 .nav-list .btn {
-  background: #5298DB; /* Mismo color que la barra de navegación */
-  color: white; /* Texto en blanco */
-  padding: 10px 15px; /* Espaciado */
-  border: none; /* Sin borde */
-  border-radius: 5px; /* Bordes redondeados */
+  background: #5298DB; 
+  color: white; 
+  padding: 10px 15px; 
+  border: none; 
+  border-radius: 5px; 
   transition: background 0.3s;
 }
 
 .nav-list a:hover,
 .nav-list .btn:hover {
-  background: rgba(255, 255, 255, 0.2); /* Efecto hover */
+  background: rgba(255, 255, 255, 0.2); 
 }
 
 .search-tab {
@@ -87,30 +87,30 @@ body {
   transform: scale(1.05);
 }
 
-/* Estilos para el estacionamiento */
+
 .parking-spot {
-  width: 100px; /* Tamaño de los cuadros */
-  height: 100px; /* Tamaño de los cuadros */
+  width: 100px; 
+  height: 100px; 
   border: 1px solid #ddd;
   margin: 10px;
   text-align: center;
-  line-height: 100px; /* Ajusta la línea de altura al tamaño del cuadro */
+  line-height: 100px; 
   font-size: 1.2rem;
   cursor: pointer;
   position: relative;
-  color: white; /* Texto blanco por defecto */
-  border-radius: 10px; /* Bordes redondeados */
+  color: white; 
+  border-radius: 10px; 
 }
 
 .occupied {
-  background-color: red; /* Rojo para ocupado */
+  background-color: red; 
 }
 
 .free {
-  background-color: #5298DB; /* Azul para libre */
+  background-color: #5298DB; 
 }
 
-/* Línea amarilla */
+
 .yellow-line {
   background-color: yellow;
   height: 100%;
@@ -118,7 +118,7 @@ body {
   margin: 0 auto;
 }
 
-/* Responsividad */
+
 @media (max-width: 768px) {
   .navbar-nav {
     flex-direction: column;
@@ -129,14 +129,14 @@ body {
   }
 }
 
-/* Centrar los cuadros del estacionamiento */
+
 #parkingLot {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-/* Ajustar el margen del estacionamiento */
+
 #parkingLotContainer {
   margin-top: 2rem;
 }
