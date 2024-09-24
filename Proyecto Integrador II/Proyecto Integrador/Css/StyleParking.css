@@ -1,0 +1,142 @@
+/* Estilos generales */
+body {
+  background: #ecf0f1;
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+  margin: 0;
+}
+
+/* Estilos para el navbar */
+.navbar {
+  background: #5298DB; /* Color deseado: #52, 152, 219 */
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand,
+.navbar .nav-link {
+  color: white; /* Texto en blanco */
+}
+
+.nav-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-list li {
+  margin-right: 20px;
+}
+
+.nav-list a,
+.nav-list .btn {
+  background: #5298DB; /* Mismo color que la barra de navegación */
+  color: white; /* Texto en blanco */
+  padding: 10px 15px; /* Espaciado */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background 0.3s;
+}
+
+.nav-list a:hover,
+.nav-list .btn:hover {
+  background: rgba(255, 255, 255, 0.2); /* Efecto hover */
+}
+
+.search-tab {
+  position: relative;
+}
+
+.search-container {
+  display: flex;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+#s {
+  padding: 10px;
+  border: none;
+  height: 38px;
+  width: 250px;
+  font-size: 16px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+#s:hover {
+  border: 1px solid #33BCF2;
+  box-shadow: 0 0 5px rgba(51, 188, 242, 0.5);
+}
+
+.search {
+  background: #3498DB;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0 10px;
+  height: 38px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.search:hover {
+  background: #ffeb3b;
+  transform: scale(1.05);
+}
+
+/* Estilos para el estacionamiento */
+.parking-spot {
+  width: 100px; /* Tamaño de los cuadros */
+  height: 100px; /* Tamaño de los cuadros */
+  border: 1px solid #ddd;
+  margin: 10px;
+  text-align: center;
+  line-height: 100px; /* Ajusta la línea de altura al tamaño del cuadro */
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: relative;
+  color: white; /* Texto blanco por defecto */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.occupied {
+  background-color: red; /* Rojo para ocupado */
+}
+
+.free {
+  background-color: #5298DB; /* Azul para libre */
+}
+
+/* Línea amarilla */
+.yellow-line {
+  background-color: yellow;
+  height: 100%;
+  width: 5px;
+  margin: 0 auto;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column;
+  }
+
+  .nav-item {
+    margin-bottom: 10px;
+  }
+}
+
+/* Centrar los cuadros del estacionamiento */
+#parkingLot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Ajustar el margen del estacionamiento */
+#parkingLotContainer {
+  margin-top: 2rem;
+}
