@@ -1,7 +1,6 @@
-// Simulación de estacionamiento (todos libres al inicio)
-const parkingLot = {}; // Un objeto para almacenar el estado de cada lugar
 
-// Inicializa todos los lugares como libres
+const parkingLot = {}; 
+
 parkingLot['A1'] = { status: 'Free', documentNumber: '', userName: '' };
 parkingLot['A2'] = { status: 'Free', documentNumber: '', userName: '' };
 parkingLot['A3'] = { status: 'Free', documentNumber: '', userName: '' };
@@ -11,15 +10,15 @@ parkingLot['B2'] = { status: 'Free', documentNumber: '', userName: '' };
 parkingLot['B3'] = { status: 'Free', documentNumber: '', userName: '' };
 parkingLot['B4'] = { status: 'Free', documentNumber: '', userName: '' };
 
-// Función para registrar un vehículo
+
 function registerCar(event) {
-  event.preventDefault(); // Evita que el formulario se envíe de forma normal
+  event.preventDefault(); 
 
   const documentNumber = document.getElementById("documentNumber").value;
   const userName = document.getElementById("userName").value;
   const parkingSpot = document.getElementById("parkingSpot").value;
 
-  // Validaciones
+
   const documentNumberError = document.getElementById("documentNumberError");
   const userNameError = document.getElementById("userNameError");
   documentNumberError.textContent = "";
@@ -38,22 +37,21 @@ function registerCar(event) {
     parkingLot[parkingSpot].status = 'Occupied';
     parkingLot[parkingSpot].documentNumber = documentNumber;
     parkingLot[parkingSpot].userName = userName;
-    updateParkingLot(); // Actualiza la visualización
-    document.getElementById("registrationForm").reset(); // Limpia el formulario
+    updateParkingLot(); 
+    document.getElementById("registrationForm").reset(); 
   } else {
     alert("El lugar de estacionamiento ya está ocupado.");
   }
 }
 
-// Función para actualizar la visualización del estacionamiento
+
 function updateParkingLot() {
   const parkingLotContainer = document.getElementById("parkingLot");
-  parkingLotContainer.innerHTML = ''; // Limpia la visualización anterior
+  parkingLotContainer.innerHTML = ''; 
 
-  // Columna izquierda
+
   const leftColumn = document.createElement('div');
-  leftColumn.classList.add('col-md-5', 'mb-3'); // Ajusta el ancho de la columna
-
+  leftColumn.classList.add('col-md-5', 'mb-3');
   for (let i = 1; i <= 4; i++) {
     const parkingSpot = document.createElement('div');
     parkingSpot.classList.add('parking-spot');
@@ -67,14 +65,14 @@ function updateParkingLot() {
       parkingSpot.classList.add('free');
     }
 
-    // Agrega el evento click para mostrar el modal
+   
     parkingSpot.addEventListener('click', function() {
       const modal = new bootstrap.Modal(document.getElementById('parkingSpotInfoModal')); // Crea una instancia del modal
       const modalInfo = document.getElementById('modalInfo');
-      const spot = this.dataset.spot; // Obtiene el lugar del cuadro
+      const spot = this.dataset.spot; 
 
       if (parkingLot[spot].status === 'Occupied') {
-        modalInfo.innerHTML = ''; // Limpia el contenido del modal
+        modalInfo.innerHTML = ''; 
         const fila = document.createElement('li');
         fila.textContent = `Fila: ${spot}`;
         modalInfo.appendChild(fila);
@@ -87,9 +85,9 @@ function updateParkingLot() {
         nombre.textContent = `Nombre: ${parkingLot[spot].userName}`;
         modalInfo.appendChild(nombre);
 
-        modal.show(); // Muestra el modal
+        modal.show();
       } else {
-        modalInfo.innerHTML = ''; // Limpia el contenido del modal
+        modalInfo.innerHTML = ''; 
         const fila = document.createElement('li');
         fila.textContent = `Fila: ${spot}`;
         modalInfo.appendChild(fila);
@@ -98,21 +96,20 @@ function updateParkingLot() {
         estado.textContent = `Estado: Libre`;
         modalInfo.appendChild(estado);
 
-        modal.show(); // Muestra el modal
+        modal.show(); 
       }
     });
 
     leftColumn.appendChild(parkingSpot);
   }
 
-  // Línea amarilla
-  const yellowLine = document.createElement('div');
-  yellowLine.classList.add('col-md-2', 'yellow-line'); // Ajusta el ancho de la línea amarilla
-  
-  // Columna derecha
-  const rightColumn = document.createElement('div');
-  rightColumn.classList.add('col-md-5'); // Ajusta el ancho de la columna
 
+  const yellowLine = document.createElement('div');
+  yellowLine.classList.add('col-md-2', 'yellow-line'); 
+  
+
+  const rightColumn = document.createElement('div');
+  rightColumn.classList.add('col-md-5');
   for (let i = 1; i <= 4; i++) {
     const parkingSpot = document.createElement('div');
     parkingSpot.classList.add('parking-spot');
@@ -126,14 +123,13 @@ function updateParkingLot() {
       parkingSpot.classList.add('free');
     }
 
-    // Agrega el evento click para mostrar el modal
+    
     parkingSpot.addEventListener('click', function() {
-      const modal = new bootstrap.Modal(document.getElementById('parkingSpotInfoModal')); // Crea una instancia del modal
+      const modal = new bootstrap.Modal(document.getElementById('parkingSpotInfoModal')); 
       const modalInfo = document.getElementById('modalInfo');
-      const spot = this.dataset.spot; // Obtiene el lugar del cuadro
-
+      const spot = this.dataset.spot; 
       if (parkingLot[spot].status === 'Occupied') {
-        modalInfo.innerHTML = ''; // Limpia el contenido del modal
+        modalInfo.innerHTML = ''; 
         const fila = document.createElement('li');
         fila.textContent = `Fila: ${spot}`;
         modalInfo.appendChild(fila);
@@ -146,9 +142,9 @@ function updateParkingLot() {
         nombre.textContent = `Nombre: ${parkingLot[spot].userName}`;
         modalInfo.appendChild(nombre);
 
-        modal.show(); // Muestra el modal
+        modal.show(); 
       } else {
-        modalInfo.innerHTML = ''; // Limpia el contenido del modal
+        modalInfo.innerHTML = ''; 
         const fila = document.createElement('li');
         fila.textContent = `Fila: ${spot}`;
         modalInfo.appendChild(fila);
@@ -157,7 +153,7 @@ function updateParkingLot() {
         estado.textContent = `Estado: Libre`;
         modalInfo.appendChild(estado);
 
-        modal.show(); // Muestra el modal
+        modal.show(); 
       }
     });
 
@@ -169,10 +165,9 @@ function updateParkingLot() {
   parkingLotContainer.appendChild(rightColumn);
 }
 
-// Función para buscar un usuario
-function searchUser(event) {
-  event.preventDefault(); // Evita que el formulario se envíe de forma normal
 
+function searchUser(event) {
+  event.preventDefault(); 
   const searchInput = document.getElementById("searchInput").value;
   let foundSlot = null;
 
@@ -192,13 +187,13 @@ function searchUser(event) {
   }
 }
 
-// Añade un evento al formulario para el registro
+
 const registrationForm = document.getElementById("registrationForm");
 registrationForm.addEventListener('submit', registerCar);
 
-// Añade un evento al formulario de búsqueda
+
 const searchForm = document.getElementById("searchForm");
 searchForm.addEventListener('submit', searchUser);
 
-// Inicializa la visualización del estacionamiento
+
 updateParkingLot();
